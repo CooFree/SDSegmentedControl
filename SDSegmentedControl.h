@@ -26,6 +26,8 @@
 
 @property UIScrollView *scrollView;
 
+- (UIButton *)itemForSegmentAtIndex:(NSUInteger)segment;
+
 @end
 
 @interface SDSegmentView : UIButton

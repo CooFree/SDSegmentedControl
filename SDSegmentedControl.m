@@ -139,6 +139,10 @@ const CGFloat kSDSegmentedControlScrollOffset = 20;
     ((CAShapeLayer *)self.layer).fillColor = backgroundColor.CGColor;
 }
 
+- (UIButton *)itemForSegmentAtIndex:(NSUInteger)segment {
+    return self._items[segment];
+}
+
 #pragma mark - UIKit API
 
 - (void)insertSegmentWithImage:(UIImage *)image atIndex:(NSUInteger)index animated:(BOOL)animated
@@ -872,8 +876,9 @@ const CGFloat kSDSegmentedControlScrollOffset = 20;
     {
         self.selectedSegmentIndex = index;
         [self setNeedsLayout];
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
+
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 #pragma mark - ScrollViewDelegate
